@@ -28,28 +28,25 @@
   Forum
   </div>
 
-  <div id="forum">
-    <table class="table table-striped" style="margin-top: 30px;">
+  <div>
+    <table class="table table-striped" style="margin-top: 30px;" id="forum">
       <tbody>
-
         <tr>
           <td>10:30AM</td>
           <td>
             <span>Anonymous asked: </span>
-            Is tomorrow a half day?
+            Will there be lunch during tomorrow's half day?
           </td>
-          <td>
-            4 <button><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button>
-            1 <button><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></button>
+          <td id="button1">
+            <button id="delete1"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
           </td>
         </tr>
         <tr class="collapse in" id="collapse1">
           <td colspan="2">
-            <textarea rows="2" cols="60"></textarea>
+            <textarea id="answer1" rows="2" cols="60"></textarea>
           </td>
           <td>
-            <div><label><input id="publics" type="checkbox"><span class="label">Public</span></label></div>
-            <div><button>Answer</button></div>
+            <div><button id="submit1">Answer</button></div>
           </td>
         </tr>
 
@@ -100,6 +97,20 @@
 
   dev = new Setup();
   dev.initTeacher();
+
+  $(document).on('click', "#submit1", function(evt){
+    var row = document.getElementById("collapse1");
+    row.innerHTML = "<td colspan=\"3\"><span>Mrs. Walter: </span>" + document.getElementById("answer1").value + "</td>";
+    row.style.color = "white"
+
+    var button = document.getElementById("button1");
+    button.innerHTML = "<button><span class=\"glyphicon glyphicon-plus\" aria-hidden=\"true\" data-toggle=\"collapse\" data-target=\"#collapse1\"></span></button>";
+  });
+
+  $(document).on('click', "#delete1", function(evt){
+    document.getElementById("forum").deleteRow(0);
+    document.getElementById("forum").deleteRow(0);
+  });
 
 </script>
 
