@@ -61,14 +61,29 @@
     var elem = document.getElementById('feed');
 
     var header1 = document.createElement("H1");       
-    var t1 = document.createTextNode(date + " " + time);       
+    var t1 = document.createTextNode(date + " " + time);  
+
+    header1.style.fontSize = "12pt";
+    header1.style.marginTop = "30px";
+    header1.style.color = "white";
+    header1.style.fontFamily =  "'Quicksand', sans-serif";
     header1.appendChild(t1); 
 
+
     var header2 = document.createElement("H1");       
-    var t2 = document.createTextNode(title);       
+    var t2 = document.createTextNode(title);
+    header2.style.fontSize = "28pt";
+    header2.style.marginTop = "10px";
+    header2.style.color = "white";
+    header2.style.fontFamily =  "'Gloria Hallelujah', sans-serif";       
     header2.appendChild(t2); 
 
-    var para = document.createElement("P");       
+
+    var para = document.createElement("P");  
+    para.style.fontSize = "12pt";
+    para.style.marginTop = "10px";
+    para.style.color = "white";
+    para.style.fontFamily =  "'Quicksand', sans-serif";       
     var t2 = document.createTextNode(desc);       
     para.appendChild(t2);
 
@@ -82,7 +97,7 @@
   dev.addButton(feed, "Create New Post", "./teacher_Newpost.html", "50%");
 
   processForm();
-  addThings();
+
 
 </script>
 
