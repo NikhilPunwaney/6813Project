@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ParentTeacherForum</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="js/dev.js">
+
+
+
+  </script>
+</head>
+<body>
+  
+<div class="container">
+  <div class="row" id="header">
+    
+  </div>
+</div>
+<h1>New Post</h1>
+
+<form action="teacher_Newsfeed.html" method="GET">
+
+  <br>Date:</br>
+  <input type="text" id="date" name="date">
+  <br>Time<br>
+  <input type="text" id="time" name="time">
+  <br>Title:<br>
+  <input type="text" id="title" name="title">
+  <br>Description:<br>
+  <input rows="10" cols="60" id='desc' name="desc">
+
+  </input>
+  <p></p>
+  <input type="submit" value="Submit" />
+
+  </form>
+
+</body>
+
+<script>
+
+  var dev;
+
+  dev = new Setup();
+  dev.initTeacher();
+
+
+
+$(document).on('click', "#post", function(evt)
+{
+    console.log("post");
+    var date = document.getElementById('date').value;
+    var time = document.getElementById('time').value;
+    var title = document.getElementById('title').value;
+    var desc = document.getElementById('desc').value;
+    console.log(title);
+
+
+});
+
+</script>
+
+</html>
