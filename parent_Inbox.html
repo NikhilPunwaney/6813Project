@@ -27,7 +27,7 @@
 
   </div></center>
 
-  <center><div style="margin-bottom: 10px;width:420px;height:450px;border:3px solid #000; text-align:center">
+  <center><div id=chatbox style="margin-bottom: 10px;width:420px;height:450px;border:3px solid #000; text-align:center">
     
     <div style="width:100%;" align="left">
     <div style="text-align:left; margin-left:10px;margin-top:10px;padding-top:10px;padding-right:10px;padding-left:10px;width:300px;height:60px;border:1px solid #000;background-color:gray;font-size: 10pt">Hi Mrs. Applebee. I am a bit concerned about Anna's actions in class yesterday</div>
@@ -48,8 +48,12 @@
   </div></center>
 
   <center>
-  <textarea name="inputText" cols="45" rows="3" placeholder="reply..."></textarea>
-  <button style="background-color:gray; height:65px; text-align:center; position:relative; vertical-align:top"><b>SEND</b></button>
+  <textarea id = myText name="inputText" cols="45" rows="3" placeholder="reply..."></textarea>
+<!--   <button class="send" style="background-color:gray; height:65px; text-align:center; position:relative; vertical-align:top"><b>SEND</b></button> -->
+
+      <input class="btn btn-primary" type="button" value="Send" id = send style="background-color:gray; height:65px; text-align:center; position:relative; vertical-align:top">
+
+      </input>
   </center>
 
 </body>
@@ -60,6 +64,59 @@
 
   dev = new Setup();
   dev.initParent();
+
+  // new game event
+$(document).on('click', "#send", function(evt)
+{
+    console.log("clicked send");
+    var text = document.getElementById('myText').value;
+    console.log(text);
+
+   var length = text.length;
+   height = length/47
+   newHeight = Math.ceil(height) * 35;
+
+   var box = document.getElementById('chatbox');
+   var newdiv = document.createElement("div");
+   newdiv.style.width ="100%";
+   newdiv.setAttribute("align", "right");
+  
+
+
+   var secdiv = document.createElement("div");
+   secdiv.style.width = "300px";
+   secdiv.style.height = "" + newHeight + "px";
+   secdiv.style.textAlign = "left";
+   secdiv.style.marginRight= "10px";
+   secdiv.style.marginTop = "10px";
+   secdiv.style.paddingTop = "10px";
+   secdiv.style.paddingLeft = "10px";
+   secdiv.style.paddingRight = "10px";
+   secdiv.style.border = "1px solid #000";
+   secdiv.style.backgroundColor = "darkblue";
+   secdiv.style.color = "white";
+
+
+
+  var words = document.createTextNode(text);       
+  secdiv.appendChild(words); 
+  newdiv.appendChild(secdiv);
+
+   box.appendChild(newdiv);
+
+
+
+   console.log(length);
+   console.log(height);
+   console.log(newHeight);
+   // max length is 47 
+
+
+
+
+
+
+});
 
 
 
