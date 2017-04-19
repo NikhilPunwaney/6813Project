@@ -12,8 +12,17 @@
 </head>
 <body>
   
-<div class="container">
+<div class="container" id="container" style="text-align: center">
   <div class="row" id="header">
+    
+  </div>
+  <div style = "font-size: 20pt; margin: 30px 0px;">
+  Welcome,
+  </div>
+  <div style = "font-size: 34pt; margin: 20px 10px;">
+  Anna Bair
+  </div>
+  <div class="row" id="middle" style="margin: ">
     
   </div>
 </div>
@@ -26,6 +35,19 @@
 
   dev = new Setup();
   dev.initParent();
+
+  var img = new Image();
+  var div = document.getElementById('middle');
+  img.onload = function() {
+    div.appendChild(img);
+  };
+  img.src = './img/parent.jpg';
+  img.style.width = "300px";
+  img.style.margin = "20px 20px";
+  img.style.borderRadius = "50%";
+  
+  container = document.getElementById("container");
+  dev.addButton(container, "My Profile", "./parent_Settings.html");
 
 </script>
 
