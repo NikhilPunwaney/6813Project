@@ -8,7 +8,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <script src="js/dev.js"></script>
+  <script src="js/dev.js">
+    
+
+    // update score
+
+
+
+});
+  </script>
 </head>
 <body>
   
@@ -18,6 +26,23 @@
   </div>
 </div>
 
+
+<div class="feed">
+
+
+<h2 id="header"> 3/16 6:12 pm </h2>
+<h2> The Civil War</h2>
+<p> Today the students learned about the American Civil War. We read children's books about the war and saw some maps that showed exactly where the different battles occurred. </p>
+
+<h2 id="header"> 3/12 7:19 pm </h2>
+<h2> Plymouth Plantation Field Trip</h2>
+<p> This week we visited Plymouth Plantation as part of our study of the pilgrims. We have been learning about the pilgrims for the past weeks and this field trip was a great way for the students to get a better idea of their way of life. The kids had a great time and really loved interacting with the actors and actresses at Plymouth Plantation. </p>
+
+</div>
+
+<input class="btn btn-primary" type="button" value="Create New Post" id = newGame style="background-color: gray">
+
+
 </body>
 
 <script>
@@ -26,6 +51,23 @@
 
   dev = new Setup();
   dev.initTeacher();
+
+  function processForm()
+  {
+    var parameters = location.search.substring(1).split("&");
+    var date = parameters[0].split("=")[1];
+    var time = parameters[1].split("=")[1];
+    var title = parameters[2].split("=")[1];
+    var desc = parameters[3].split("=")[1];
+    console.log(parameters);
+    console.log(date);
+    console.log(time);
+    console.log(title);
+    console.log(desc);
+    $("#container").append($("<br></br>"));
+    console.log("got here");
+  }
+  processForm();
 
 </script>
 
