@@ -9,13 +9,78 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <script src="js/dev.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Indie+Flower|League+Script|Quicksand|Ranga|Roboto" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: rgb(0, 153, 255)">
   
-<div class="container">
+<div class="container" id="container" style="text-align: center;">
   <div class="row" id="header">
     
   </div>
+  <div style = "font-size: 35pt; margin-top: 30px; color: white; font-family: 'Quicksand', sans-serif;">
+  Forum
+  </div>
+
+  <div id="forum">
+    <table class="table table-striped">
+      <tbody>
+
+        <tr>
+          <td>10:30AM</td>
+          <td>
+            <span>Anonymous asked: </span>
+            Is tomorrow a half day?
+          </td>
+          <td>
+            <button><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button>
+            <button><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></button>
+          </td>
+        </tr>
+        <tr class="collapse out" id="collapse1" style="color:white"></tr>
+
+        <tr>
+          <td>Friday</td>
+          <td>
+            <span>Mary Sue asked: </span>
+            What will we need for the field trip?
+          </td>
+          <td>
+            <button><span class="glyphicon glyphicon-plus" aria-hidden="true" data-toggle="collapse" data-target="#collapse2"></span></button>
+          </td>
+        </tr>
+        <tr class="collapse out" id="collapse2" style="color:white">
+          <td colspan="3">
+            <span>Mrs. Walter: </span>
+            Please have your children bring a packed lunch, water bottle, comfortable sneakers, and (optional) some spending money.
+          </td>
+        </tr>
+
+        <tr>
+          <td>Wednesday</td>
+          <td>
+            <span>Anonymous asked: </span>
+            When is the next Math quiz?
+          </td>
+          <td>
+            <button><span class="glyphicon glyphicon-plus" aria-hidden="true" data-toggle="collapse" data-target="#collapse3"></span></button>
+          </td>
+        </tr>
+        <tr class="collapse out" id="collapse3" style="color:white">
+          <td colspan="3">
+            <span>Mrs. Walter: </span>
+            The next Math quiz will be on Friday, April 21.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="newquestion">
+    <div><textarea rows="6" cols="60"></textarea></div>
+    <div><label><input id="anon" type="checkbox"><span class="label">Anonymous</span></label></div>
+    <div><button>Ask New Question</button></div>
+  </div>
+
 </div>
 
 </body>
@@ -30,5 +95,3 @@
 </script>
 
 </html>
-
-
