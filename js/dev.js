@@ -46,6 +46,9 @@ var Setup = function () {
     button.style.margin = "20px 20px 20px 10px";
     button.style.padding = "10px 10px";
     button.style.borderRadius = "12px";
+    button.style.backgroundColor = "white";
+    button.style.border = "white";
+    button.style.fontFamily = "Quicksand, sans-serif";
     button.onclick = function() {
       dev.visitPage(link);
     };
