@@ -39,12 +39,14 @@ var Setup = function () {
 
   }
 
-  this.addButton = function(parentElement, name, link) {
+  this.addButton = function(parentElement, name, link, width) {
     button = document.createElement("button");
     button.innerHTML = name;
-    button.style.width = "90px";
-    button.style.margin = "20px 20px 20px 10px";
-    button.style.padding = "10px 10px";
+    button.style.width = width || "90px";
+    button.style.marginTop = "20px";
+    button.style.marginLeft = "10px";
+    button.style.marginRight = "10px";
+    button.style.padding = "10px 10px 10px 10px";
     button.style.borderRadius = "12px";
     button.style.backgroundColor = "white";
     button.style.border = "white";

@@ -17,10 +17,23 @@
   <div class="row" id="header">
     
   </div>
-  <div style = "font-size: 35pt; margin-top: 30px; color: white; font-family: 'Quicksand', sans-serif;">
-  My Profile
+  <div style = "font-size: 20pt; margin: 40px 0px; color: white; font-family: 'Quicksand', sans-serif;">
+  Welcome to
   </div>
-  <div id = "settings">
+  <div style = "font-size: 34pt; margin: -10px 10px; color: white; font-family: 'Gloria Hallelujah', cursive;">
+  Parent Teacher Forum
+  </div>
+  <div class="row" id="middle" style="margin: 20px">
+    
+  </div>
+  <div>
+
+  <input type="text" name="username" placeholder="Username">
+    
+  </div>
+  <div>
+
+  <input type="text" name="password" placeholder="Password">
     
   </div>
 </div>
@@ -34,9 +47,18 @@
   dev = new Setup();
   dev.initParent();
 
-  settings = document.getElementById("settings");
-  dev.addButton(settings, "Edit Profile Picture", "./teacher_Settings.html", "400px");
-  dev.addButton(settings, "Logout", "./login.html", "400px");
+  var img = new Image();
+  var div = document.getElementById('middle');
+  img.onload = function() {
+    div.appendChild(img);
+  };
+  img.src = './img/logo.png';
+  img.style.width = "300px";
+  img.style.margin = "20px 20px";
+  img.style.borderRadius = "50%";
+  
+  container = document.getElementById("container");
+  dev.addButton(container, "Login", "./parent_Home.html");
 
 </script>
 
