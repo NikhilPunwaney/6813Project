@@ -27,20 +27,20 @@
 </div>
 
 
-<div class="feed">
+<div id="feed" class="feed">
 
 
-<h2 id="header"> 3/16 6:12 pm </h2>
+<h2 id="header1"> 3/16 6:12 pm </h2>
 <h2> The Civil War</h2>
 <p> Today the students learned about the American Civil War. We read children's books about the war and saw some maps that showed exactly where the different battles occurred. </p>
 
-<h2 id="header"> 3/12 7:19 pm </h2>
+<h2 id="header2"> 3/12 7:19 pm </h2>
 <h2> Plymouth Plantation Field Trip</h2>
 <p> This week we visited Plymouth Plantation as part of our study of the pilgrims. We have been learning about the pilgrims for the past weeks and this field trip was a great way for the students to get a better idea of their way of life. The kids had a great time and really loved interacting with the actors and actresses at Plymouth Plantation. </p>
 
 </div>
 
-<input class="btn btn-primary" type="button" value="Create New Post" id = newGame style="background-color: gray">
+<input class="btn btn-primary" type="button" value="Create New Post" id ="post" style="background-color: gray">
 
 
 </body>
@@ -64,10 +64,40 @@
     console.log(time);
     console.log(title);
     console.log(desc);
-    $("#container").append($("<br></br>"));
-    console.log("got here");
+    var elem = document.getElementById('feed')
+
+    var header1 = document.createElement("H1");       
+    var t1 = document.createTextNode(date + " " + time);       
+    header1.appendChild(t1); 
+
+    var header2 = document.createElement("H1");       
+    var t2 = document.createTextNode(title);       
+    header2.appendChild(t2); 
+
+    var para = document.createElement("P");       
+    var t2 = document.createTextNode(desc);       
+    para.appendChild(t2);
+
+//section.insertBefore( span, section.firstChild )
+    elem.insertBefore(para, elem.firstChild);
+    elem.insertBefore(header2, elem.firstChild);
+    elem.insertBefore(header1, elem.firstChild);
+
+  
   }
+
+$(document).on('click', "#post", function(evt)
+{
+  console.log("clicked post");
+  window.location = "teacher_newpost";
+
+
+});
+
+
+
   processForm();
+  addThings();
 
 </script>
 
