@@ -23,7 +23,7 @@ var Setup = function () {
     this.addButton(header, "Home", "./teacher_Home.html");
     this.addButton(header, "Newsfeed", "./teacher_Newsfeed.html")
     this.addButton(header, "Forum", "./teacher_Forum.html")
-    this.addButton(header, "Inbox", "./teacher_Inbox.html")
+    this.addButton(header, "Inbox", "./teacher_prelim_inbox.html")
 
   }
 

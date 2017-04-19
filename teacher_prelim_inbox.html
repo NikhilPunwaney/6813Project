@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ParentTeacherForum</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="js/dev.js"></script>
+</head>
+
+<body style="background-color: rgb(0, 153, 255)">
+
+<body>
+  
+<div class="container">
+  <div class="row" id="header">
+    
+  </div>
+</div>
+
+<div style="text-align: center">
+  <div style = "font-size: 25pt; margin: 10px 0px; color: white; font-family: 'Quicksand', sans-serif;">
+  <b>Select Student:</b>
+  </div>
+
+<SELECT style='font-size: 32px; font-family: "Verdana"; color: darkgray' NAME="SelectStudent" SIZE="10" MULTIPLE REQUIRED>
+<OPTION SELECTED> Applebee, Anna
+<OPTION> Adams, Tom
+<OPTION> Brown, Maria
+<OPTION> Campbell, Michael
+<OPTION> Craft, Samantha
+<OPTION> Easton, Roger
+<OPTION> Garcia, Kyle
+<OPTION> Gregory, Liam
+<OPTION> Jones, Bob
+<OPTION> Keller, Lily
+<OPTION> Langs, Sarah
+<OPTION> Nelson, Stephen 
+<OPTION> Princeton, Joe
+<OPTION> Queens, Kevin
+<OPTION> Riley, Alex
+<OPTION> Smith, Dylan
+<OPTION> Sanders, Robert
+<OPTION> Wheaton, Jamie
+<OPTION> Zhou, Crystal
+</SELECT></OPTION>
+
+</div>
+<div id = "middle" style="text-align: center">
+
+</div>
+
+</body>
+
+<script>
+
+  var dev;
+
+  dev = new Setup();
+  dev.initTeacher();
+
+  dev.addButton(document.getElementById("middle"), "Chat", "./teacher_Inbox.html", "150px");
+
+
+</script>
+
+</html>
+
+
