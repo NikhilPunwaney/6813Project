@@ -57,8 +57,35 @@ var Setup = function () {
     parentElement.appendChild(button);
   }
 
+  this.addSpecialButton = function(parentElement, name, link, link2, width) {
+    button = document.createElement("button");
+    button.innerHTML = name;
+    button.style.width = width || "90px";
+    button.style.marginTop = "20px";
+    button.style.marginLeft = "10px";
+    button.style.marginRight = "10px";
+    button.style.padding = "10px 10px 10px 10px";
+    button.style.borderRadius = "12px";
+    button.style.backgroundColor = "white";
+    button.style.border = "white";
+    button.style.fontFamily = "Quicksand, sans-serif";
+    button.onclick = function() {
+      dev.visitPages(link, link2);
+    };
+    parentElement.appendChild(button);
+  }
+
   this.visitPage = function(link){
     window.location = link;
+  }
+
+  this.visitPages = function(link1, link2){
+    if (document.getElementById("username").value === "teacher") {
+      window.location = link1;
+    } 
+    if (document.getElementById("username").value === "parent") {
+      window.location = link2;
+    } 
   }
   
 }
