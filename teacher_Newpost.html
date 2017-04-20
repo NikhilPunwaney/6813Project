@@ -25,19 +25,18 @@
 
 <form action="teacher_Newsfeed.html" method="GET">
 
-  <br>Date:</br>
+  Date:</br>
   <input type="text" id="date" name="date">
-  <br>Time<br>
-  <input type="text" id="time" name="time">
-  <br>Title:<br>
+  <br>
+  Title:<br>
   <input type="text" id="title" name="title">
-  <br>Description:<br>
-  <input rows="10" cols="60" id='desc' name="desc">
-
-  </input>
+  <br>
+  Description:<br>
+  <input type="text" id='desc' name="desc">
   <p></p>
+  <br><br>
   <input type="submit" value="Submit" />
-  echo 'scenario: '.nl2br($_POST['scenario']).'</br>';
+
 
   </form>
 
