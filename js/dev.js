@@ -24,7 +24,7 @@ var Setup = function () {
     
     this.addButton(header, "Newsfeed", "./teacher_Newsfeed.html");
     this.addButton(header, "Forum", "./teacher_Forum.html");
-    this.addButton(header, "Inbox", "./teacher_prelim_inbox.html");
+    this.addButton(header, "Messages", "./teacher_prelim_inbox.html");
     this.addButton(header, "Profile", "./teacher_Home.html");
 
     document.getElementById(document.title).style.backgroundColor = "black";
@@ -39,7 +39,7 @@ var Setup = function () {
     
     this.addButton(header, "Newsfeed", "./parent_Newsfeed.html");
     this.addButton(header, "Forum", "./parent_Forum.html");
-    this.addButton(header, "Inbox", "./parent_Inbox.html");
+    this.addButton(header, "Messages", "./parent_Inbox.html");
     this.addButton(header, "Profile", "./parent_Home.html");
 
     document.getElementById(document.title).style.backgroundColor = "black";

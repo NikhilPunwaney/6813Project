@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Inbox</title>
+  <title>Messages</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -30,9 +30,8 @@
   <center>
   <textarea id = myText name="inputText" cols="45" rows="3" placeholder="Reply..."></textarea>
 
-      <input class="btn btn-primary" type="button" value="Send" id = send style="background-color:gray; height:35px; text-align:center; position:relative; vertical-align:top">
+      <button id="send" style="width: 80px; margin-top: 10px; margin-left: 4px; margin-right: 4px; padding: 10px 5px; border-radius: 12px; background-color: white; border: white; font-family: Quicksand, sans-serif; font-size: 14px;">Send</button>
 
-      </input>
   </center>
 
 </body>
@@ -51,8 +50,10 @@
 
 $(document).on('click', "#send", function(evt) {
   var text = document.getElementById('myText').value;
-  dev.addMessage("right", "#82C5E5", "white", text);
-  document.getElementById('myText').value = "";
+  if (text.trim() !== "") {
+    dev.addMessage("right", "#82C5E5", "white", text);
+    document.getElementById('myText').value = "";
+  }
 });
 
 

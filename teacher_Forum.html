@@ -17,6 +17,7 @@
   
   span {font-weight: bold;}
   tr {height: 70px; margin-top: 10px; padding-top: 10px; vertical-align: middle;}
+  td {valign: middle;}
 
 </style>
   
@@ -26,7 +27,7 @@
   </div>
 
   <div>
-    <table class="table table-striped" width="50%" style="margin-top: 30px;" id="forum">
+    <table class="table table-striped" style="margin-top: 30px; margin-bottom: 30px" id="forum">
       <tbody>
         <tr>
           <td>10:30AM</td>
@@ -40,10 +41,11 @@
         </tr>
         <tr class="collapse in" id="collapse1">
           <td colspan="2">
-            <textarea id="answer1" rows="2" cols="60"></textarea>
+            <textarea id="answer1" rows="2" cols="30"></textarea>
           </td>
           <td>
-            <div><button id="submit1">Answer</button></div>
+            <button id="submit1" style="width: 60px; height:45px; margin-top: 0px; margin-left: 4px; margin-right: 4px; padding: 10px 5px; border-radius: 12px; background-color: white; border: white; font-family: Quicksand, sans-serif; font-size: 14px;">Answer</button>
+            <!-- <div><button id="submit1">Answer</button></div> -->
           </td>
         </tr>
 

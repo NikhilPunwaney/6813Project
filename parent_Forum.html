@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ParentTeacherForum</title>
+  <title>Forum</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -26,10 +26,10 @@
   </div>
 
   <div>
-    <table id="forum" class="table table-striped">
+    <table class="table table-striped" style="margin-top: 30px;" id="forum">
       <tbody>
 
-        <tr style="background-color:LightPink">
+        <tr style="background-color:#2386B5">
           <td>10:30AM</td>
           <td>
             <span>Anonymous asked: </span>
@@ -76,11 +76,9 @@
     </table>
   </div>
 
-  <div id="newquestion">
-    <div><textarea id="question" rows="6" cols="60"></textarea></div>
-    <div><label><input id="anon" type="checkbox"><span class="label">Anonymous</span></label></div>
-    <div><button id="ask">Ask New Question</button></div>
-  </div>
+  <textarea id="question" cols="44" rows="3" placeholder="Ask new question... "></textarea>
+    <div><input id="anon" type="checkbox"><span class="label">Anonymous</span></div>
+      <button id="ask" style="width: 80px; margin-top: 10px; margin-left: 4px; margin-right: 4px; margin-bottom: 30px; padding: 10px 10px 10px 10px; border-radius: 12px; background-color: white; border: white; font-family: Quicksand, sans-serif; font-size: 14px;">Send</button>
 
 </div>
 
@@ -103,7 +101,7 @@
       hour -= 12;
     } else {
       period = "AM";
-      if (hour == 0) {
+      if (hour === 0) {
         hour = 12;
       }
     }
@@ -112,24 +110,27 @@
     if (document.getElementById("anon").checked) {
       asker = "Anonymous";
     } else {
-      asker = "Anna Applebee";
+      asker = "Mary Bair";
     }
     var question = document.getElementById("question").value;
     document.getElementById("question").value = "";
 
-    forum = document.getElementById("forum");
+    if (question.trim() !== "") {
+      forum = document.getElementById("forum");
 
-    var hiddenRow = forum.insertRow(0);
-    hiddenRow.classList.add("collapse");
-    hiddenRow.classList.add("out");
+      var hiddenRow = forum.insertRow(0);
+      hiddenRow.classList.add("collapse");
+      hiddenRow.classList.add("out");
 
-    var questionRow = forum.insertRow(0);
-    questionRow.style.backgroundColor = "LightPink";
-    var date = questionRow.insertCell(0);
-    var text = questionRow.insertCell(1);
-    questionRow.insertCell(2);
-    date.innerHTML = hour + ":" + minute + period;
-    text.innerHTML = "<span>" + asker + " asked: </span>" + question;
+      var questionRow = forum.insertRow(0);
+      questionRow.style.backgroundColor = "#2386B5";
+      var date = questionRow.insertCell(0);
+      var text = questionRow.insertCell(1);
+      questionRow.insertCell(2);
+      date.innerHTML = hour + ":" + minute + period;
+      text.innerHTML = "<span>" + asker + " asked: </span>" + question;
+    }
+  document.getElementById("question").focus()
 
   });
 
