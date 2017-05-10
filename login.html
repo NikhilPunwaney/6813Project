@@ -11,16 +11,16 @@
   <script src="js/dev.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Indie+Flower|League+Script|Quicksand|Ranga|Roboto" rel="stylesheet">
 </head>
-<body style="background-color: rgb(0, 153, 255)">
+<body>
   
 <div class="container" id="container" style="text-align: center;">
   <div class="row" id="header">
     
   </div>
-  <div style = "font-size: 20pt; margin: 40px 0px; color: white; font-family: 'Quicksand', sans-serif;">
+  <div style = "font-size: 15pt; margin: 20px 0px; color: white; font-family: 'Quicksand', sans-serif;">
   Welcome to
   </div>
-  <div style = "font-size: 34pt; margin: -10px 10px; color: white; font-family: 'Gloria Hallelujah', cursive;">
+  <div style = "font-size: 24pt; margin: -10px 10px; color: white; font-family: 'Gloria Hallelujah', cursive;">
   Parent Teacher Forum
   </div>
   <div class="row" id="middle" style="margin: 20px">
@@ -45,7 +45,6 @@
   var dev;
 
   dev = new Setup();
-  dev.initParent();
 
   var img = new Image();
   var div = document.getElementById('middle');
@@ -53,12 +52,14 @@
     div.appendChild(img);
   };
   img.src = './img/logo.png';
-  img.style.width = "300px";
+  img.style.width = "250px";
   img.style.margin = "20px 20px";
   img.style.borderRadius = "50%";
   
   container = document.getElementById("container");
-  dev.addSpecialButton(container, "Login", "./teacher_Home.html", "./parent_Home.html");
+  dev.addSpecialButton(container, "Login", "./teacher_Newsfeed.html", "./parent_Newsfeed.html");
+
+  document.body.style.backgroundColor = "#798FFF"
 
 </script>
 
