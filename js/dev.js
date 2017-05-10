@@ -22,10 +22,13 @@ var Setup = function () {
     header = document.getElementById("header");
     header.style.textAlign = "center";
     
-    this.addButton(header, "Newsfeed", "./teacher_Newsfeed.html")
-    this.addButton(header, "Forum", "./teacher_Forum.html")
-    this.addButton(header, "Inbox", "./teacher_prelim_inbox.html")
+    this.addButton(header, "Newsfeed", "./teacher_Newsfeed.html");
+    this.addButton(header, "Forum", "./teacher_Forum.html");
+    this.addButton(header, "Inbox", "./teacher_prelim_inbox.html");
     this.addButton(header, "Profile", "./teacher_Home.html");
+
+    document.getElementById(document.title).style.backgroundColor = "black";
+    document.getElementById(document.title).style.color = "white";
 
   }
 
@@ -34,16 +37,20 @@ var Setup = function () {
     header = document.getElementById("header");
     header.style.textAlign = "center";
     
-    this.addButton(header, "Newsfeed", "./parent_Newsfeed.html")
-    this.addButton(header, "Forum", "./parent_Forum.html")
-    this.addButton(header, "Inbox", "./parent_Inbox.html")
+    this.addButton(header, "Newsfeed", "./parent_Newsfeed.html");
+    this.addButton(header, "Forum", "./parent_Forum.html");
+    this.addButton(header, "Inbox", "./parent_Inbox.html");
     this.addButton(header, "Profile", "./parent_Home.html");
+
+    document.getElementById(document.title).style.backgroundColor = "black";
+    document.getElementById(document.title).style.color = "white";
 
   }
 
   this.addButton = function(parentElement, name, link, width) {
     button = document.createElement("button");
     button.innerHTML = name;
+    button.id = name;
     button.style.width = width || "80px";
     button.style.marginTop = "20px";
     button.style.marginLeft = "4px";
@@ -108,6 +115,32 @@ var Setup = function () {
     outsideBox.appendChild(messageBox);
     chatbox.appendChild(outsideBox);
     chatbox.style.height = "100%";
+  }
+
+  this.addLogoutButton = function(parentElement, name, link, width) {
+    button = document.createElement("button");
+    button.innerHTML = name;
+    button.id = name;
+    button.style.width = width || "80px";
+    button.style.marginTop = "20px";
+    button.style.marginLeft = "4px";
+    button.style.marginRight = "4px";
+    button.style.padding = "10px 5px 10px 5px";
+    button.style.borderRadius = "12px";
+    button.style.backgroundColor = "white";
+    button.style.border = "white";
+    button.style.fontFamily = "Quicksand, sans-serif";
+    button.style.fontSize = "14px";
+    button.onclick = function() {
+      dev.confirmLogout(link);
+    };
+    parentElement.appendChild(button);
+  }
+
+  this.confirmLogout = function(link) {
+    if (confirm("Are you sure you want to logout?") == true) {
+        dev.visitPage(link);
+    } 
   }
   
 }
