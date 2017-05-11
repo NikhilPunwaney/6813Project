@@ -61,6 +61,7 @@ var Setup = function () {
     button.style.border = "white";
     button.style.fontFamily = "Quicksand, sans-serif";
     button.style.fontSize = "14px";
+    button.style.fontWeight = "bold";
     button.onclick = function() {
       dev.visitPage(link);
     };
@@ -141,6 +142,50 @@ var Setup = function () {
     if (confirm("Are you sure you want to logout?") == true) {
         dev.visitPage(link);
     } 
+  }
+
+  this.addNewsFeed = function(date, title, desc) {
+    var elem = document.getElementById('feed');
+
+    var header1 = document.createElement("H1");       
+    var t1 = document.createTextNode(date);  
+    header1.style.fontSize = "12pt";
+    header1.style.marginTop = "30px";
+    header1.style.color = "white";
+    header1.style.fontWeight = "bold";
+    header1.style.fontFamily =  "'Quicksand', sans-serif";
+    header1.appendChild(t1); 
+
+
+    var header2 = document.createElement("H1");       
+    var t2 = document.createTextNode(title);
+    header2.style.fontSize = "24pt";
+    header2.style.marginTop = "10px";
+    header2.style.color = "black";
+    header2.style.fontFamily =  "'Gloria Hallelujah', sans-serif";       
+    header2.appendChild(t2); 
+
+
+    var para = document.createElement("P"); 
+    var t3 = document.createTextNode(desc);   
+    para.style.fontSize = "12pt";
+    para.style.marginTop = "10px";
+    para.style.color = "white";
+    para.style.fontFamily =  "'Quicksand', sans-serif";       
+    para.appendChild(t3);
+
+    var line = document.createElement("P"); 
+    var t4 = document.createTextNode("---------");   
+    line.style.fontSize = "12pt";
+    line.style.marginTop = "10px";
+    line.style.color = "white";
+    line.style.fontFamily =  "'Quicksand', sans-serif";       
+    line.appendChild(t4);
+
+    elem.insertBefore(line, elem.firstChild);
+    elem.insertBefore(para, elem.firstChild);
+    elem.insertBefore(header2, elem.firstChild);
+    elem.insertBefore(header1, elem.firstChild);
   }
   
 }

@@ -109,8 +109,10 @@
   });
 
   $(document).on('click', "#delete1", function(evt){
-    document.getElementById("forum").deleteRow(0);
-    document.getElementById("forum").deleteRow(0);
+    if (confirm("Are you sure you want to delete this post?") == true) {
+        document.getElementById("forum").deleteRow(0);
+        document.getElementById("forum").deleteRow(0);
+    } 
   });
 
 </script>
