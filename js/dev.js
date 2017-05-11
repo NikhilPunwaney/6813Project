@@ -171,7 +171,8 @@ var Setup = function () {
     para.style.fontSize = "12pt";
     para.style.marginTop = "10px";
     para.style.color = "white";
-    para.style.fontFamily =  "'Quicksand', sans-serif";       
+    para.style.fontFamily =  "'Quicksand', sans-serif";  
+    para.align = "left";
     para.appendChild(t3);
 
     var line = document.createElement("P"); 

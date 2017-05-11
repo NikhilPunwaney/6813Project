@@ -11,7 +11,7 @@
   <script src="js/dev.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Indie+Flower|League+Script|Quicksand|Ranga|Roboto" rel="stylesheet">
 </head>
-<body style="background-color: rgb(0, 153, 255)">
+<body onload="SetDate();" style="background-color: rgb(0, 153, 255)">
   
 <div class="container" id="container" style="text-align: center">
   <div class="row" id="header">
@@ -22,9 +22,8 @@
   </div>
   <div>
   <form action="teacher_Newsfeed.html" method="GET" style="margin-top: 20px" autocomplete="on">
-
   Date:</br>
-  <input type="date" id="date" name="date">
+  <input  type="date" id="date" name="date">
   <br>
   Title:<br>
   <input type="text" id="title" name="title">
@@ -42,6 +41,23 @@
 </body>
 
 <script>
+function SetDate()
+{
+var date = new Date();
+
+var day = date.getDate();
+var month = date.getMonth() + 1;
+var year = date.getFullYear();
+
+if (month < 10) month = "0" + month;
+if (day < 10) day = "0" + day;
+
+var today = year + "-" + month + "-" + day;
+
+
+document.getElementById('date').value = today;
+}
+
 
   var dev;
 
