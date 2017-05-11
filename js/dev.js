@@ -182,6 +182,14 @@ var Setup = function () {
     line.style.fontFamily =  "'Quicksand', sans-serif";       
     line.appendChild(t4);
 
+    var btn = document.createElement("BUTTON");
+    var t = document.createTextNode("delete");       // Create a text node
+    btn.appendChild(t);  
+
+    var space = document.createElement("P"); 
+
+    elem.insertBefore(space, elem.firstChild);
+    elem.insertBefore(btn, elem.firstChild);
     elem.insertBefore(line, elem.firstChild);
     elem.insertBefore(para, elem.firstChild);
     elem.insertBefore(header2, elem.firstChild);
