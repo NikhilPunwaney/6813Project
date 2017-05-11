@@ -144,11 +144,11 @@ var Setup = function () {
     } 
   }
 
-  this.addNewsFeed = function(month, day, title, desc) {
+  this.addNewsFeed = function(date, title, desc) {
     var elem = document.getElementById('feed');
 
     var header1 = document.createElement("H1");       
-    var t1 = document.createTextNode(month+" "+day);  
+    var t1 = document.createTextNode(date);  
     header1.style.fontSize = "12pt";
     header1.style.marginTop = "30px";
     header1.style.color = "white";
@@ -185,11 +185,29 @@ var Setup = function () {
 
     var btn2 = document.createElement("BUTTON");
     var t2 = document.createTextNode("edit"); 
-    btn2.appendChild(t2);  
+    btn2.appendChild(t2); 
+    btn2.style.width = "90px";
+    btn2.style.marginTop = "20px";
+    btn2.style.marginLeft = "10px";
+    btn2.style.marginRight = "10px";
+    btn2.style.padding = "10px 10px 10px 10px";
+    btn2.style.borderRadius = "12px";
+    btn2.style.backgroundColor = "white";
+    btn2.style.border = "white";
+    btn2.style.fontFamily = "Quicksand, sans-serif"; 
 
     var btn = document.createElement("BUTTON");
     var t = document.createTextNode("delete"); 
     btn.appendChild(t);  
+    btn.style.width = "90px";
+    btn.style.marginTop = "20px";
+    btn.style.marginLeft = "10px";
+    btn.style.marginRight = "10px";
+    btn.style.padding = "10px 10px 10px 10px";
+    btn.style.borderRadius = "12px";
+    btn.style.backgroundColor = "white";
+    btn.style.border = "white";
+    btn.style.fontFamily = "Quicksand, sans-serif"; 
 
     var space = document.createElement("P"); 
 
