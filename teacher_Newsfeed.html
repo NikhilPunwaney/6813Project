@@ -32,29 +32,36 @@
   dev = new Setup();
   dev.initTeacher();
 
-  date2 = "March 16th";
+    feed = document.getElementById("feed");
+  dev.addButton(feed, "Create New Post", "./teacher_Newpost.html", "50%");
+
+
+  month1 = "March"
+  day1 = "16";
   title2 = "The Civil War";
   desc2 = "Today the students learned about the American Civil War. We read children's books about the war and saw some maps that showed exactly where the different battles occurred."
 
-  date1 = "March 12th";
+  month2 = "March";
+  day2 = "12"
   title1 = "Plymouth Plantation Field Trip";
   desc1 = "This week we visited Plymouth Plantation as part of our study of the pilgrims. We have been learning about the pilgrims for the past weeks and this field trip was a great way for the students to get a better idea of their way of life. The kids had a great time and really loved interacting with the actors and actresses at Plymouth Plantation."
 
-  dev.addNewsFeed(date1, title1, desc1);
-  dev.addNewsFeed(date2, title2, desc2);
+  dev.addNewsFeed(month1, day1, title1, desc1);
+  dev.addNewsFeed(month2, day2, title2, desc2);
 
   function processForm()
   {
     var parameters = location.search.substring(1).split("&");
-    var date = parameters[0].split("=")[1].replace(/\+/g, " ");
-    var title = parameters[1].split("=")[1].replace(/\+/g, " ");
-    var desc = parameters[2].split("=")[1].replace(/\+/g, " ");
-    dev.addNewsFeed(date, title, desc);
+    console.log(parameters);
+    var month = parameters[0].split("=")[1].replace(/\+/g, " ");
+    var day = parameters[1].split("=")[1].replace(/\+/g, " ");
+    var title = parameters[2].split("=")[1].replace(/\+/g, " ");
+    var desc = parameters[3].split("=")[1].replace(/\+/g, " ");
+    dev.addNewsFeed(month, day, title, desc);
   }
 
 
-  feed = document.getElementById("feed");
-  dev.addButton(feed, "Create New Post", "./teacher_Newpost.html", "50%");
+
 
   processForm();
 

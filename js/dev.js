@@ -144,11 +144,11 @@ var Setup = function () {
     } 
   }
 
-  this.addNewsFeed = function(date, title, desc) {
+  this.addNewsFeed = function(month, day, title, desc) {
     var elem = document.getElementById('feed');
 
     var header1 = document.createElement("H1");       
-    var t1 = document.createTextNode(date);  
+    var t1 = document.createTextNode(month+" "+day);  
     header1.style.fontSize = "12pt";
     header1.style.marginTop = "30px";
     header1.style.color = "white";
