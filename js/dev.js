@@ -179,21 +179,45 @@ var Setup = function () {
     line.style.fontSize = "12pt";
     line.style.marginTop = "10px";
     line.style.color = "white";
-    line.style.fontFamily =  "'Quicksand', sans-serif";       
+    line.style.fontFamily =  "'Quicksand', sans-serif"; 
+    line.id = "line" ;     
     line.appendChild(t4);
 
+    var btn2 = document.createElement("BUTTON");
+    var t2 = document.createTextNode("edit"); 
+    btn2.appendChild(t2);  
+
     var btn = document.createElement("BUTTON");
-    var t = document.createTextNode("delete");       // Create a text node
+    var t = document.createTextNode("delete"); 
     btn.appendChild(t);  
 
     var space = document.createElement("P"); 
 
+
     elem.insertBefore(space, elem.firstChild);
     elem.insertBefore(btn, elem.firstChild);
+    elem.insertBefore(btn2, elem.firstChild);
     elem.insertBefore(line, elem.firstChild);
     elem.insertBefore(para, elem.firstChild);
     elem.insertBefore(header2, elem.firstChild);
     elem.insertBefore(header1, elem.firstChild);
+
+    btn.onclick = function() {
+        if(confirm("Are you sure you want to delete your post?")){
+            elem.removeChild(space);
+            elem.removeChild(btn);
+            elem.removeChild(btn2);
+            elem.removeChild(line);
+            elem.removeChild(para);
+            elem.removeChild(header2);
+            elem.removeChild(header1);
+        }
+
+    }; 
+
+        btn2.onclick = function() {
+            dev.visitPage("./teacher_Newpost.html");
+    };
   }
   
 }
