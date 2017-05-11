@@ -29,7 +29,7 @@
   <div>
     <table class="table table-striped" style="margin-top: 30px; margin-bottom: 30px" id="forum">
       <tbody>
-        <tr>
+        <tr id="firstQuestion" style="background-color:#2386B5">
           <td>10:30AM</td>
           <td>
             <span>Anonymous asked: </span>
@@ -41,7 +41,7 @@
         </tr>
         <tr class="collapse in" id="collapse1">
           <td colspan="2">
-            <textarea id="answer1" rows="2" cols="30"></textarea>
+            <textarea id="answer1" cols="30"></textarea>
           </td>
           <td>
             <button id="submit1" style="width: 60px; height:45px; margin-top: 0px; margin-left: 4px; margin-right: 4px; padding: 10px 5px; border-radius: 12px; background-color: white; border: white; font-family: Quicksand, sans-serif; font-size: 14px;">Answer</button>
@@ -98,9 +98,11 @@
   dev.initTeacher();
 
   $(document).on('click', "#submit1", function(evt){
+    var question = document.getElementById("firstQuestion");
+    question.style.backgroundColor = "white";
     var row = document.getElementById("collapse1");
     row.innerHTML = "<td colspan=\"3\"><span>Mrs. Walter: </span>" + document.getElementById("answer1").value + "</td>";
-    row.style.color = "white"
+    row.style.color = "white";
 
     var button = document.getElementById("button1");
     button.innerHTML = "<button><span class=\"glyphicon glyphicon-plus\" aria-hidden=\"true\" data-toggle=\"collapse\" data-target=\"#collapse1\"></span></button>";
