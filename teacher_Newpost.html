@@ -19,7 +19,7 @@
   </div>
   <div id = "beforeFeed">
   </div>
-  <div style = "font-size: 28pt; margin-top: 30px; margin-bottom: 0px; color: white; font-family: 'Gloria Hallelujah', cursive; text-align: center">
+  <div id = "posttitle" style = "font-size: 28pt; margin-top: 30px; margin-bottom: 0px; color: white; font-family: 'Gloria Hallelujah', cursive; text-align: center">
   New Post
   </div>
   <div>
@@ -48,6 +48,12 @@
 
 
 if(localStorage.getItem("edit") === "on"){
+    var posttitle = document.getElementById('posttitle');
+    console.log(posttitle);
+    var t = document.createTextNode("Edit Post"); 
+    posttitle.removeChild(posttitle.firstChild);
+    posttitle.appendChild(t);  
+
     var editDate = localStorage.getItem("date")
     var editTitle = localStorage.getItem("title")
     var editDesc = localStorage.getItem("description")
