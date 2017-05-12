@@ -145,6 +145,7 @@ var Setup = function () {
   }
 
   this.addNewsFeed = function(date, title, desc) {
+    localStorage.setItem("edit", "off");
     var elem = document.getElementById('feed');
 
     var header1 = document.createElement("H1");       
@@ -235,7 +236,28 @@ var Setup = function () {
     }; 
 
         btn2.onclick = function() {
-            dev.visitPage("./teacher_Newpost.html");
+        
+
+            if (typeof(Storage) !== "undefined") {
+                 // Code for localStorage/sessionStorage.
+                localStorage.setItem("edit", "on");
+                 localStorage.setItem("date", date);
+                 localStorage.setItem("title", title);
+                 localStorage.setItem("description", desc);
+                 console.log(typeof(Storage));
+            } else {
+                 // Sorry! No Web Storage support..
+                 console.log("undefined");
+                }
+           // dev.visitPage("./teacher_Newpost.html");
+            window.location = "./teacher_Newpost.html";
+             elem.removeChild(space);
+            elem.removeChild(btn);
+            elem.removeChild(btn2);
+            elem.removeChild(line);
+            elem.removeChild(para);
+            elem.removeChild(header2);
+            elem.removeChild(header1);
     };
   }
   

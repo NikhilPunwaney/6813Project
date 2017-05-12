@@ -17,6 +17,8 @@
   <div class="row" id="header">
     
   </div>
+  <div id = "beforeFeed">
+  </div>
   <div style = "font-size: 28pt; margin-top: 30px; margin-bottom: 0px; color: white; font-family: 'Gloria Hallelujah', cursive; text-align: center">
   New Post
   </div>
@@ -41,9 +43,31 @@
 </body>
 
 <script>
+
+
+
+
+if(localStorage.getItem("edit") === "on"){
+    var editDate = localStorage.getItem("date")
+    var editTitle = localStorage.getItem("title")
+    var editDesc = localStorage.getItem("description")
+    if(0 != editDate.length){
+       document.getElementById('date').value = editDate;
+    }
+    if(0 != editTitle.length){
+       document.getElementById('title').value = editTitle;
+    }
+    if(0 != editDesc.length){
+       document.getElementById('desc').value = editDesc;
+    }
+}
+
+
+
 function SetDate()
 {
-var date = new Date();
+  if(  document.getElementById('date').value == ""){
+    var date = new Date();
 
 var day = date.getDate();
 var month = date.getMonth() + 1;
@@ -56,10 +80,18 @@ var today = year + "-" + month + "-" + day;
 
 
 document.getElementById('date').value = today;
+  }
+
 }
 
 
-  var dev;
+    var dev = new Setup();
+
+
+  beforeFeed = document.getElementById("beforeFeed");
+
+
+  dev.addButton(beforeFeed, "go back", "./teacher_Newsfeed.html");
 
   dev = new Setup();
   dev.initTeacher();
