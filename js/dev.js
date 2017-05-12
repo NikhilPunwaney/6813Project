@@ -215,9 +215,9 @@ var Setup = function () {
 
 
     elem.insertBefore(space, elem.firstChild);
+    elem.insertBefore(line, elem.firstChild);
     elem.insertBefore(btn, elem.firstChild);
     elem.insertBefore(btn2, elem.firstChild);
-    elem.insertBefore(line, elem.firstChild);
     elem.insertBefore(para, elem.firstChild);
     elem.insertBefore(header2, elem.firstChild);
     elem.insertBefore(header1, elem.firstChild);
