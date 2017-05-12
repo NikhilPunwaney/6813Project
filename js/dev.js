@@ -187,7 +187,7 @@ var Setup = function () {
     line.appendChild(t4);
 
     var btn2 = document.createElement("BUTTON");
-    var t2 = document.createTextNode("edit"); 
+    var t2 = document.createTextNode("Edit"); 
     btn2.appendChild(t2); 
     btn2.style.width = "90px";
     btn2.style.marginTop = "20px";
@@ -200,7 +200,7 @@ var Setup = function () {
     btn2.style.fontFamily = "Quicksand, sans-serif"; 
 
     var btn = document.createElement("BUTTON");
-    var t = document.createTextNode("delete"); 
+    var t = document.createTextNode("Delete"); 
     btn.appendChild(t);  
     btn.style.width = "90px";
     btn.style.marginTop = "20px";
