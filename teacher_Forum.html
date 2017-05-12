@@ -11,11 +11,11 @@
   <script src="js/dev.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Indie+Flower|League+Script|Quicksand|Ranga|Roboto" rel="stylesheet">
 </head>
-<body style="background-color: rgb(0, 153, 255)">
+<body style="background-color: rgb(0, 153, 255); font-family: Quicksand, sans-serif;">
 
 <style>
   
-  span {font-weight: bold;}
+  .username {font-weight: bold;}
   tr {height: 70px; margin-top: 10px; padding-top: 10px; vertical-align: middle;}
   td {valign: middle;}
 
@@ -27,59 +27,100 @@
   </div>
 
   <div>
-    <table class="table table-striped" style="margin-top: 30px; margin-bottom: 30px" id="forum">
+
+    <table class="table table-striped" style="margin-top: 30px; margin-bottom: 10px" id="forum">
       <tbody>
-        <tr id="firstQuestion" style="background-color:#2386B5">
-          <td>10:30AM</td>
+        <tr id="q4" style="background-color:#D1D1D1">
+          <td>Today<p>12:10PM</td>
           <td>
-            <span>Anonymous asked: </span>
+            <span class="username">Mary Bair asked: </span>
             Will there be lunch during tomorrow's half day?
           </td>
-          <td id="button1">
-            <button id="delete1"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-          </td>
-        </tr>
-        <tr class="collapse in" id="collapse1">
-          <td colspan="2">
-            <textarea id="answer1" cols="30"></textarea>
-          </td>
           <td>
-            <button id="submit1" style="width: 60px; height:45px; margin-top: 0px; margin-left: 4px; margin-right: 4px; padding: 10px 5px; border-radius: 12px; background-color: white; border: white; font-family: Quicksand, sans-serif; font-size: 14px;">Answer</button>
-            <!-- <div><button id="submit1">Answer</button></div> -->
+            <button id="delete4"><span class="glyphicon glyphicon-trash"></span></button>
           </td>
         </tr>
+        <tr id="r4" style="background-color:#428bca;">
+          <td id="rcell4" colspan="2">
+            <textarea id="reply4" cols="35" placeholder="Answer... "></textarea>
+          </td>
+          <td id="button4">
+            <button id="submit4" style="width: 30px; height:45px; margin-top: 0px; padding: 10px 5px; border-radius: 12px; background-color: white; border: white; font-family: Quicksand, sans-serif; font-size: 14px;">
+              <span class="glyphicon glyphicon-pushpin"></span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-        <tr>
-          <td>Friday</td>
+    <table class="table table-striped" style="margin-bottom: 10px" id="forum">
+      <tbody>
+        <tr id="q1" style="background-color:#D1D1D1">
+          <td>Saturday<p>10:30AM</td>
           <td>
-            <span>Mary Sue asked: </span>
+            <span class="username">Anonymous asked: </span>
+            Can my child buy lunch on the field trip?
+          </td>
+          <td>
+            <button id="delete1"><span class="glyphicon glyphicon-trash"></span></button>
+          </td>
+        </tr>
+        <tr id="r1" style="background-color:#428bca;">
+          <td id="rcell1" colspan="2">
+            <textarea id="reply1" cols="35" placeholder="Answer... "></textarea>
+          </td>
+          <td id="button1">
+            <button id="submit1" style="width: 30px; height:45px; margin-top: 0px; padding: 10px 5px; border-radius: 12px; background-color: white; border: white; font-family: Quicksand, sans-serif; font-size: 14px;">
+              <span class="glyphicon glyphicon-pushpin"></span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="table table-striped" style="margin-top: 10px; margin-bottom: 10px" id="forum">
+      <tbody>
+        <tr id="q2">
+          <td>Friday<p>5:20PM</td>
+          <td>
+            <span class="username">Mary Sue asked: </span>
             What will we need for the field trip?
           </td>
           <td>
-            <button><span class="glyphicon glyphicon-plus" aria-hidden="true" data-toggle="collapse" data-target="#collapse2"></span></button>
+            <button id="delete2"><span class="glyphicon glyphicon-trash"></span></button>
           </td>
         </tr>
-        <tr class="collapse out" id="collapse2" style="color:white">
-          <td colspan="3">
-            <span>Mrs. Walter: </span>
-            Please have your children bring a packed lunch, water bottle, comfortable sneakers, and (optional) some spending money.
+        <tr id="r2" style="background-color:#428bca; color:white;">
+          <td id="rcell2" colspan="2">
+            <span class="username">Mrs. Walter: </span>
+            <span id="answer2">Please have your children bring a packed lunch (there will be no food for purchase), water bottle, comfortable sneakers, and (optional) spending money.</span>
+          </td>
+          <td id="button2">
+            <button id="edit2"><span class="glyphicon glyphicon-edit"></span></button>
           </td>
         </tr>
+      </tbody>
+    </table>
 
-        <tr>
-          <td>Wednesday</td>
+    <table class="table table-striped" style="margin-top: 10px; margin-bottom: 10px" id="forum">
+      <tbody>
+        <tr id="q3">
+          <td>Wednesday<p>9:32PM</td>
           <td>
-            <span>Anonymous asked: </span>
+            <span class="username">Anonymous asked: </span>
             When is the next Math quiz?
           </td>
           <td>
-            <button><span class="glyphicon glyphicon-plus" aria-hidden="true" data-toggle="collapse" data-target="#collapse3"></span></button>
+            <button id="delete3"><span class="glyphicon glyphicon-trash"></span></button>
           </td>
         </tr>
-        <tr class="collapse out" id="collapse3" style="color:white">
-          <td colspan="3">
-            <span>Mrs. Walter: </span>
-            The next Math quiz will be on Friday, April 21.
+        <tr id="r3" style="background-color:#428bca; color:white">
+          <td id="rcell3" colspan="2">
+            <span class="username">Mrs. Walter: </span>
+            <span id="answer3">The next Math quiz will be on Friday, April 21.</span>
+          </td>
+          <td id="button3">
+            <button id="edit3"><span class="glyphicon glyphicon-edit"></span></button>
           </td>
         </tr>
       </tbody>
@@ -98,21 +139,108 @@
   dev.initTeacher();
 
   $(document).on('click', "#submit1", function(evt){
-    var question = document.getElementById("firstQuestion");
-    question.style.backgroundColor = "white";
-    var row = document.getElementById("collapse1");
-    row.innerHTML = "<td colspan=\"3\"><span>Mrs. Walter: </span>" + document.getElementById("answer1").value + "</td>";
-    row.style.color = "white";
+    var answer = document.getElementById("reply1").value;
+    if (answer.trim() !== "") {
+      var question = document.getElementById("q1");
+      question.style.backgroundColor = "white";
+      var row = document.getElementById("r1");
+      row.innerHTML = "<td id=\"rcell1\" colspan=\"2\"><span class=\"username\">Mrs. Walter: </span><span id=\"answer1\">" + answer + "</span></td><td id=\"button1\"><button id=\"edit1\"><span class=\"glyphicon glyphicon-edit\"></span></button></td>";
+      row.style.backgroundColor = "#428bca";
+      row.style.color = "white";
+    }
+  });
 
-    var button = document.getElementById("button1");
-    button.innerHTML = "<button><span class=\"glyphicon glyphicon-plus\" aria-hidden=\"true\" data-toggle=\"collapse\" data-target=\"#collapse1\"></span></button>";
+  $(document).on('click', "#submit2", function(evt){
+    var answer = document.getElementById("reply2").value;
+    if (answer.trim() !== "") {
+      var question = document.getElementById("q2");
+      question.style.backgroundColor = "white";
+      var row = document.getElementById("r2");
+      row.style.backgroundColor = "#428bca";
+      row.style.color = "white";
+      var cell = document.getElementById("rcell2");
+      cell.innerHTML = "<span class=\"username\">Mrs. Walter: </span><span id=\"answer2\">" + answer + "</span>";
+      var button = document.getElementById("button2");
+      button.innerHTML = "<button id=\"edit2\"><span class=\"glyphicon glyphicon-edit\"></span></button>";
+    }
+  });
+
+  $(document).on('click', "#submit3", function(evt){
+    var answer = document.getElementById("reply3").value;
+    if (answer.trim() !== "") {
+      var question = document.getElementById("q3");
+      question.style.backgroundColor = "white";
+      var row = document.getElementById("r3");
+      row.style.backgroundColor = "#428bca";
+      row.style.color = "white";
+      var cell = document.getElementById("rcell3");
+      cell.innerHTML = "<span class=\"username\">Mrs. Walter: </span><span id=\"answer3\">" + answer + "</span>";
+      var button = document.getElementById("button3");
+      button.innerHTML = "<button id=\"edit3\"><span class=\"glyphicon glyphicon-edit\"></span></button>";
+    }
+  });
+
+  $(document).on('click', "#submit4", function(evt){
+    var answer = document.getElementById("reply4").value;
+    if (answer.trim() !== "") {
+      var question = document.getElementById("q4");
+      question.style.backgroundColor = "white";
+      var row = document.getElementById("r4");
+      row.style.backgroundColor = "#428bca";
+      row.style.color = "white";
+      var cell = document.getElementById("rcell4");
+      cell.innerHTML = "<span class=\"username\">Mrs. Walter: </span><span id=\"answer4\">" + answer + "</span>";
+      var button = document.getElementById("button4");
+      button.innerHTML = "<button id=\"edit4\"><span class=\"glyphicon glyphicon-edit\"></span></button>";
+    }
   });
 
   $(document).on('click', "#delete1", function(evt){
-    if (confirm("Are you sure you want to delete this post?") == true) {
-        document.getElementById("forum").deleteRow(0);
-        document.getElementById("forum").deleteRow(0);
+    if (confirm("Are you sure you want to delete this question?") == true) {
+        $("#q1").remove();
+        $("#r1").remove();
     } 
+  });
+
+  $(document).on('click', "#delete2", function(evt){
+    if (confirm("Are you sure you want to delete this question?") == true) {
+        $("#q2").remove();
+        $("#r2").remove();
+    } 
+  });
+
+  $(document).on('click', "#delete3", function(evt){
+    if (confirm("Are you sure you want to delete this question?") == true) {
+        $("#q3").remove();
+        $("#r3").remove();
+    } 
+  });
+
+  $(document).on('click', "#edit1", function(evt){
+    var answer = document.getElementById("answer1").innerHTML;
+    var cell = document.getElementById("rcell1");
+    cell.innerHTML = "<textarea style=\"color: black;\" id=\"reply1\" rows=\"4\" cols=\"35\" placeholder=\"Answer... \">" + answer + "</textarea>";
+
+    var button = document.getElementById("button1");
+    button.innerHTML = "<button id=\"submit1\" style=\"width: 30px; height:45px; margin-top: 0px; padding: 10px 5px; border-radius: 12px; background-color: white; color: black; border: white; font-family: Quicksand, sans-serif; font-size: 14px;\"><span class=\"glyphicon glyphicon-pushpin\"></span></button>"
+  });
+
+    $(document).on('click', "#edit2", function(evt){
+    var answer = document.getElementById("answer2").innerHTML;
+    var cell = document.getElementById("rcell2");
+    cell.innerHTML = "<textarea style=\"color: black;\" id=\"reply2\" rows=\"4\" cols=\"35\" placeholder=\"Answer... \">" + answer + "</textarea>";
+
+    var button = document.getElementById("button2");
+    button.innerHTML = "<button id=\"submit2\" style=\"width: 30px; height:45px; margin-top: 0px; padding: 10px 5px; border-radius: 12px; background-color: white; color: black; border: white; font-family: Quicksand, sans-serif; font-size: 14px;\"><span class=\"glyphicon glyphicon-pushpin\"></span></button>"
+  });
+
+    $(document).on('click', "#edit3", function(evt){
+    var answer = document.getElementById("answer3").innerHTML;
+    var cell = document.getElementById("rcell3");
+    cell.innerHTML = "<textarea style=\"color: black;\" id=\"reply3\" rows=\"4\" cols=\"35\" placeholder=\"Answer... \">" + answer + "</textarea>";
+
+    var button = document.getElementById("button3");
+    button.innerHTML = "<button id=\"submit3\" style=\"width: 30px; height:45px; margin-top: 0px; padding: 10px 5px; border-radius: 12px; background-color: white; color: black; border: white; font-family: Quicksand, sans-serif; font-size: 14px;\"><span class=\"glyphicon glyphicon-pushpin\"></span></button>"
   });
 
 </script>

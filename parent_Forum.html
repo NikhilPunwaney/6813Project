@@ -7,14 +7,19 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
   <script src="js/dev.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Indie+Flower|League+Script|Quicksand|Ranga|Roboto" rel="stylesheet">
 </head>
-<body style="background-color: rgb(0, 153, 255)">
+<body style="background-color: rgb(0, 153, 255); font-family: Quicksand, sans-serif;">
 
 <style>
   
+  .toggle.forum, .toggle-on.forum, .toggle-off.forum { border-radius: 12px; }
+  .toggle.forum .toggle-handle { border-radius: 12px; }
   span {font-weight: bold;}
   tr {height: 70px; margin-top: 10px; padding-top: 10px; vertical-align: middle;}
 
@@ -29,44 +34,44 @@
     <table class="table table-striped" style="margin-top: 30px;" id="forum">
       <tbody>
 
-        <tr style="background-color:#2386B5">
-          <td>10:30AM</td>
+        <tr style="background-color:#D1D1D1;">
+          <td>Saturday<p>10:30AM</td>
           <td>
-            <span>Anonymous asked: </span>
-            Will there be lunch during tomorrow's half day?
+            <span>Anonymous: </span>
+            Can my child buy lunch during the field trip?
           </td>
           <td></td>
         </tr>
         <tr class="collapse out" id="collapse1" style="color:white"></tr>
 
-        <tr>
-          <td>Friday</td>
+        <tr id="q2">
+          <td>Friday<p>5:20PM</td>
           <td>
-            <span>Mary Sue asked: </span>
+            <span>Mary Sue: </span>
             What will we need for the field trip?
           </td>
           <td>
-            <button><span class="glyphicon glyphicon-plus" aria-hidden="true" data-toggle="collapse" data-target="#collapse2"></span></button>
+            <button><span id="arrow2" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
           </td>
         </tr>
-        <tr class="collapse out" id="collapse2" style="color:white">
+        <tr class="collapse out" id="collapse2" style="background-color:#428bca; color:white">
           <td colspan="3">
             <span>Mrs. Walter: </span>
-            Please have your children bring a packed lunch, water bottle, comfortable sneakers, and (optional) some spending money.
+            Please have your children bring a packed lunch (there will be no food for purchase), water bottle, comfortable sneakers, and (optional) spending money.
           </td>
         </tr>
 
-        <tr>
-          <td>Wednesday</td>
+        <tr id="q3">
+          <td>Wednesday<p>9:32PM</td>
           <td>
-            <span>Anonymous asked: </span>
+            <span>Anonymous: </span>
             When is the next Math quiz?
           </td>
           <td>
-            <button><span class="glyphicon glyphicon-plus" aria-hidden="true" data-toggle="collapse" data-target="#collapse3"></span></button>
+            <button><span id="arrow3" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
           </td>
         </tr>
-        <tr class="collapse out" id="collapse3" style="color:white">
+        <tr class="collapse out" id="collapse3" style="background-color:#428bca; color:white">
           <td colspan="3">
             <span>Mrs. Walter: </span>
             The next Math quiz will be on Friday, April 21.
@@ -77,8 +82,11 @@
   </div>
 
   <textarea id="question" cols="44" rows="3" placeholder="Ask new question... "></textarea>
-    <div><input id="anon" type="checkbox"><span class="label">Anonymous</span></div>
-      <button id="ask" style="width: 80px; margin-top: 10px; margin-left: 4px; margin-right: 4px; margin-bottom: 30px; padding: 10px 10px 10px 10px; border-radius: 12px; background-color: white; border: white; font-family: Quicksand, sans-serif; font-size: 14px;">Send</button>
+    Post as:
+    <label style="padding: 10px 20px 0px 2px">
+      <input id="anon" type="checkbox" checked data-toggle="toggle" data-on="Mary Bair" data-off="Anonymous" data-size="small" data-style="forum">
+    </label>
+  <button id="ask" style="width: 80px; margin-top: 10px; margin-left: 4px; margin-right: 4px; margin-bottom: 30px; padding: 10px 10px 10px 10px; border-radius: 12px; background-color: white; border: white; font-family: Quicksand, sans-serif; font-size: 14px;">Post</button>
 
 </div>
 
@@ -90,6 +98,24 @@
 
   dev = new Setup();
   dev.initParent();
+
+  $(document).on('click', "#q2", function(evt){
+    $('#collapse2').collapse("toggle");
+    if (document.getElementById("arrow2").className == "glyphicon glyphicon-chevron-down") {
+      document.getElementById("arrow2").className = "glyphicon glyphicon-chevron-up";
+    } else {
+      document.getElementById("arrow2").className = "glyphicon glyphicon-chevron-down";
+    }
+  });
+
+  $(document).on('click', "#q3", function(evt){
+    $('#collapse3').collapse("toggle");
+    if (document.getElementById("arrow3").className == "glyphicon glyphicon-chevron-down") {
+      document.getElementById("arrow3").className = "glyphicon glyphicon-chevron-up";
+    } else {
+      document.getElementById("arrow3").className = "glyphicon glyphicon-chevron-down";
+    }
+  });
 
   $(document).on('click', "#ask", function(evt){
     var d = new Date();
@@ -108,9 +134,9 @@
 
     var asker;
     if (document.getElementById("anon").checked) {
-      asker = "Anonymous";
-    } else {
       asker = "Mary Bair";
+    } else {
+      asker = "Anonymous";
     }
     var question = document.getElementById("question").value;
     document.getElementById("question").value = "";
@@ -123,15 +149,14 @@
       hiddenRow.classList.add("out");
 
       var questionRow = forum.insertRow(0);
-      questionRow.style.backgroundColor = "#2386B5";
+      questionRow.style.backgroundColor = "#D1D1D1";
       var date = questionRow.insertCell(0);
       var text = questionRow.insertCell(1);
       questionRow.insertCell(2);
-      date.innerHTML = hour + ":" + minute + period;
-      text.innerHTML = "<span>" + asker + " asked: </span>" + question;
+      date.innerHTML = "Today<p>" + hour + ":" + minute + period;
+      text.innerHTML = "<span>" + asker + ": </span>" + question;
     }
   document.getElementById("question").focus()
-
   });
 
 </script>
