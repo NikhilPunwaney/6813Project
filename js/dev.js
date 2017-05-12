@@ -113,6 +113,7 @@ var Setup = function () {
     messageBox.style.fontSize = "10pt";
     messageBox.style.color = textColor;
     messageBox.innerHTML = text;
+    messageBox.style.fontFamily = "Quicksand, sans-serif"
     outsideBox.appendChild(messageBox);
     chatbox.appendChild(outsideBox);
     chatbox.style.height = "100%";
