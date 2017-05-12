@@ -216,6 +216,13 @@
     } 
   });
 
+  $(document).on('click', "#delete4", function(evt){
+    if (confirm("Are you sure you want to delete this question?") == true) {
+        $("#q4").remove();
+        $("#r4").remove();
+    } 
+  });
+
   $(document).on('click', "#edit1", function(evt){
     var answer = document.getElementById("answer1").innerHTML;
     var cell = document.getElementById("rcell1");
