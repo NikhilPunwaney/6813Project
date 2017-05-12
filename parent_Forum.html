@@ -31,7 +31,7 @@
   </div>
 
   <div>
-    <table class="table table-striped" style="margin-top: 30px;" id="forum">
+    <table class="table table-striped" style="margin-top: 30px; text-align: left;" id="forum">
       <tbody>
 
         <tr style="background-color:#D1D1D1;">
@@ -47,7 +47,7 @@
         <tr id="q2">
           <td>Friday<p>5:20PM</td>
           <td>
-            <span>Mary Sue: </span>
+            <span>Sally Sue: </span>
             What will we need for the field trip?
           </td>
           <td>
@@ -149,6 +149,7 @@
       hiddenRow.classList.add("out");
 
       var questionRow = forum.insertRow(0);
+      questionRow.style.border = "2px solid green";
       questionRow.style.backgroundColor = "#D1D1D1";
       var date = questionRow.insertCell(0);
       var text = questionRow.insertCell(1);

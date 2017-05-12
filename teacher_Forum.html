@@ -83,7 +83,7 @@
         <tr id="q2">
           <td>Friday<p>5:20PM</td>
           <td>
-            <span class="username">Mary Sue asked: </span>
+            <span class="username">Sally Sue asked: </span>
             What will we need for the field trip?
           </td>
           <td>
@@ -222,7 +222,9 @@
     cell.innerHTML = "<textarea style=\"color: black;\" id=\"reply1\" rows=\"4\" cols=\"35\" placeholder=\"Answer... \">" + answer + "</textarea>";
 
     var button = document.getElementById("button1");
-    button.innerHTML = "<button id=\"submit1\" style=\"width: 30px; height:45px; margin-top: 0px; padding: 10px 5px; border-radius: 12px; background-color: white; color: black; border: white; font-family: Quicksand, sans-serif; font-size: 14px;\"><span class=\"glyphicon glyphicon-pushpin\"></span></button>"
+    button.innerHTML = "<button id=\"submit1\" style=\"width: 30px; height:45px; margin-top: 0px; padding: 10px 5px; border-radius: 12px; background-color: white; color: black; border: white; font-family: Quicksand, sans-serif; font-size: 14px;\"><span class=\"glyphicon glyphicon-pushpin\"></span></button>";
+
+    document.getElementById("reply1").focus();
   });
 
     $(document).on('click', "#edit2", function(evt){
@@ -231,7 +233,9 @@
     cell.innerHTML = "<textarea style=\"color: black;\" id=\"reply2\" rows=\"4\" cols=\"35\" placeholder=\"Answer... \">" + answer + "</textarea>";
 
     var button = document.getElementById("button2");
-    button.innerHTML = "<button id=\"submit2\" style=\"width: 30px; height:45px; margin-top: 0px; padding: 10px 5px; border-radius: 12px; background-color: white; color: black; border: white; font-family: Quicksand, sans-serif; font-size: 14px;\"><span class=\"glyphicon glyphicon-pushpin\"></span></button>"
+    button.innerHTML = "<button id=\"submit2\" style=\"width: 30px; height:45px; margin-top: 0px; padding: 10px 5px; border-radius: 12px; background-color: white; color: black; border: white; font-family: Quicksand, sans-serif; font-size: 14px;\"><span class=\"glyphicon glyphicon-pushpin\"></span></button>";
+  
+      document.getElementById("reply2").focus();
   });
 
     $(document).on('click', "#edit3", function(evt){
@@ -240,7 +244,9 @@
     cell.innerHTML = "<textarea style=\"color: black;\" id=\"reply3\" rows=\"4\" cols=\"35\" placeholder=\"Answer... \">" + answer + "</textarea>";
 
     var button = document.getElementById("button3");
-    button.innerHTML = "<button id=\"submit3\" style=\"width: 30px; height:45px; margin-top: 0px; padding: 10px 5px; border-radius: 12px; background-color: white; color: black; border: white; font-family: Quicksand, sans-serif; font-size: 14px;\"><span class=\"glyphicon glyphicon-pushpin\"></span></button>"
+    button.innerHTML = "<button id=\"submit3\" style=\"width: 30px; height:45px; margin-top: 0px; padding: 10px 5px; border-radius: 12px; background-color: white; color: black; border: white; font-family: Quicksand, sans-serif; font-size: 14px;\"><span class=\"glyphicon glyphicon-pushpin\"></span></button>";
+
+    document.getElementById("reply3").focus();
   });
 
     $(document).on('click', "#edit4", function(evt){
@@ -249,7 +255,9 @@
     cell.innerHTML = "<textarea style=\"color: black;\" id=\"reply4\" rows=\"4\" cols=\"35\" placeholder=\"Answer... \">" + answer + "</textarea>";
 
     var button = document.getElementById("button4");
-    button.innerHTML = "<button id=\"submit4\" style=\"width: 30px; height:45px; margin-top: 0px; padding: 10px 5px; border-radius: 12px; background-color: white; color: black; border: white; font-family: Quicksand, sans-serif; font-size: 14px;\"><span class=\"glyphicon glyphicon-pushpin\"></span></button>"
+    button.innerHTML = "<button id=\"submit4\" style=\"width: 30px; height:45px; margin-top: 0px; padding: 10px 5px; border-radius: 12px; background-color: white; color: black; border: white; font-family: Quicksand, sans-serif; font-size: 14px;\"><span class=\"glyphicon glyphicon-pushpin\"></span></button>";
+
+    document.getElementById("reply4").focus();
   });
 
 </script>
