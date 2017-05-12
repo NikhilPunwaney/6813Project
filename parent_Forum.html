@@ -99,6 +99,8 @@
   dev = new Setup();
   dev.initParent();
 
+  document.getElementById("question").focus();
+
   $(document).on('click', "#q2", function(evt){
     $('#collapse2').collapse("toggle");
     if (document.getElementById("arrow2").className == "glyphicon glyphicon-chevron-down") {
